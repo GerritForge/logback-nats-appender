@@ -1,2 +1,9 @@
 script: mvn package
 install: true
+deploy:
+  on: release
+  key:
+    provider: bintray
+    user: "lucamilanesio"
+    skip_cleanup: true
+    secure: wkfd+huCG8TqWo2PDyKalXPUoGXUxuHQgLArWwk0gTKqArTLXiQm/8n9JQNaDyhQ/LpdlMNRUlNsogGTmZa9YtC8WBcyrTXUG4J8pEdj2Yuq/WIltMm+B7lr0tt9/f5pIOt0y+tR3E053Y3bdBIfWIRgMys3wpJAfILJ7ookH9yNJ86umYCSTDwK4NvbDMEA6vHxk1q60YK+ZkpG3zmw1Tnd6zjPxMyd6SlJd71uu1o2qvYaZ7fUdcxWVkacL5wt36mUFMCIEEmGmYCxBKxk211TxkToWPelqx1ZixTzfTqeYNUgasJia/AYHKQuyqhSwIDBH+C/oBmtowo8TFpKWE08J+FBRU/r2sErpTzVtnmXgE5T8ITC2gR0gWGcnIkk7Z1wsq2klxx1MC2gt56dmkhuWDWyoSIOHn58bBeDdFCEkJZm9gcK++dO9Sn4axDvynyR2WfW+pRtCYWCw8gbRLNI7HwixxouavdQFdCiFRV6DZKaeqi+JqoR31YrZOm7Tpj6pQG9+qEYdqUzI0XwGWl9xf14luz3tiaFWgBMoQAVth+bXZOh+xza96GOzC3x/QSHu1JRusR8hyXk0CuKN9B++XeH8U3AG4qchGU4ORiQ55/fXN/wTov7IwR712vA8/tnpBVich9ddily2e3akxQ7c43dc8MEI6RnjTgSIx4=
