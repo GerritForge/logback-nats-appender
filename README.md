@@ -20,6 +20,7 @@ events.
 ```xml
 <configuration>
     <appender name="nats" class="com.gerritforge.logback.nats.NatsTopicAppender">
+        <url>nats://nats.mycompany.com:4222</url>
         <topic>mylogs</topic>
     </appender>
 

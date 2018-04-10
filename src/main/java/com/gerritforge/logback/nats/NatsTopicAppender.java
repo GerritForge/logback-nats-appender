@@ -3,27 +3,33 @@ package com.gerritforge.logback.nats;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.AppenderBase;
 
-import java.io.IOException;
+import java.util.Optional;
 
 public class NatsTopicAppender extends AppenderBase<ILoggingEvent> {
-    private NatsClient nats = new NatsClient();
+    private Optional<NatsClient> nats = Optional.empty();
 
-    private String topic = "foo";
+    private Optional<String> topic = Optional.empty();
 
     @Override
     protected void append(ILoggingEvent iLoggingEvent) {
-        try {
-            nats.send(topic, iLoggingEvent.getFormattedMessage().getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        nats.ifPresent(c ->
+                topic.ifPresent(t ->
+                        c.send(t, iLoggingEvent.getFormattedMessage().getBytes())));
     }
 
     public String getTopic() {
-        return topic;
+        return topic.orElse("");
     }
 
     public void setTopic(String topic) {
-        this.topic = topic;
+        this.topic = Optional.of(topic);
+    }
+
+    public String getUrl() {
+        return nats.map(n -> n.url).orElse("");
+    }
+
+    public void setUrl(String url) {
+        nats = Optional.of(new NatsClient(url));
     }
 }
