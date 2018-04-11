@@ -1,7 +1,8 @@
 script: mvn deploy
 install: true
 deploy:
-  on: release
+  on:
+    tags: true
   provider: bintray
   file: "bintray.json"
   user: "lucamilanesio"
