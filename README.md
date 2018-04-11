@@ -1,6 +1,7 @@
 # LOGBack appender for NATS Topic
 
 [![Build Status](https://travis-ci.org/GerritForge/logback-nats-appender.svg?branch=master)](https://travis-ci.org/GerritForge/logback-nats-appender)
+[![Download](https://api.bintray.com/packages/gerritforge/maven/logback-nats-appender/images/download.svg)](https://bintray.com/gerritforge/maven/logback-nats-appender/_latestVersion)
 
 [LOGBack](https://logback.qos.ch/) appender for [NATS](https://nats.io/) topics
 
