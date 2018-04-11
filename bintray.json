@@ -1,7 +1,7 @@
 {
   "package": {
     "name": "com.gerritforge",
-    "repo": "com.gerritforge",
+    "repo": "maven",
     "subject": "gerritforge",
     "desc": "LOGBack appender for NATS Topic",
     "website_url": "https://github.com/GerritForge/logback-nats-appender",
@@ -27,7 +27,7 @@
 
   "files":
   [
-    {"includePattern": "target/logback-nats-appender-0.1.0-SNAPSHOT.jar"}
+    {"includePattern": "target/logback-nats-appender-*.jar"}
   ],
   "publish": true
 }
