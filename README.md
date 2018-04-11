@@ -31,5 +31,8 @@ events.
 </configuration>
 ```
 
+## How to contribute
+
+Please read carefully the [Project Contribution Guidelines](CONTRIBUTING.md)
 
 
