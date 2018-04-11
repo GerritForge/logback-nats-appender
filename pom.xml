@@ -65,4 +65,12 @@
       </plugin>
 	    </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>default</id>
+            <name>Local Deploy</name>
+            <url>file://deploy</url>
+        </repository>
+    </distributionManagement>
 </project>
