@@ -17,10 +17,10 @@
   },
 
   "version": {
-    "name": "0.1.1",
-    "desc": "Alpha-1a",
-    "released": "2018-04-11",
-    "vcs_tag": "v0.1.1",
+    "name": "0.2.0",
+    "desc": "Alpha-2",
+    "released": "2018-04-12",
+    "vcs_tag": "v0.2.0",
     "attributes": [],
     "gpgSign": false
   },
