@@ -1,5 +1,9 @@
 # LOGBack appender for NATS Topics - Release Notes
 
+## Ver. 0.2.2
+
+ALpha-2b with shading of the NATS client library
+
 ## Ver. 0.2.0
 
 Alpha-2 with improvements for publication to Maven Central:
