@@ -8,6 +8,27 @@
     <packaging>jar</packaging>
 
     <name>logback-nats-appender</name>
+    <description>LOGBack appender for NATS Topic</description>
+    <url>https://github.com/gerritforge/logback-nats-appender</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/gerritforge/logback-nats-appender.git</url>
+        <connection>https://github.com/gerritforge/logback-nats-appender.git</connection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Luca Milanesio</name>
+        </developer>
+    </developers>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -95,6 +116,20 @@
                     </execution>
                 </executions>
             </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
         </plugins>
     </build>
 
