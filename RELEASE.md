@@ -1,8 +1,14 @@
 # LOGBack appender for NATS Topics - Release Notes
 
+## Ver. 0.2.3
+
+Alpha-3 with rate limits on errors
+
+- When NATS connectivity isn't available, limit error rates to max 1/min
+
 ## Ver. 0.2.2
 
-ALpha-2b with shading of the NATS client library
+Alpha-2b with shading of the NATS client library
 
 ## Ver. 0.2.0
 

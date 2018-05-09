@@ -6,11 +6,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class NatsClientImpl implements NatsClient {
+    private static final long ERROR_RATE_INTERVAL_MSEC = 60 * 1000L;
     private static final Logger log = LoggerFactory.getLogger(NatsClientImpl.class);
 
     private final String url;
+
+    private final AtomicLong lastErrorTs = new AtomicLong();
 
     public NatsClientImpl(String url) {
         this.url = url;
@@ -21,7 +25,13 @@ public class NatsClientImpl implements NatsClient {
         try (Connection nc = Nats.connect(url)) {
             nc.publish(topic, msg);
         } catch (IOException e) {
-            log.error("Unable to push logging event to {}/{}", url, topic, e);
+            long errorsTs = lastErrorTs.get();
+            long currentTs = System.currentTimeMillis();
+
+            if((errorsTs + ERROR_RATE_INTERVAL_MSEC) < currentTs) {
+                log.error("Unable to push logging event to {}/{}", url, topic, e);
+                lastErrorTs.set(currentTs);
+            }
         }
     }
 
